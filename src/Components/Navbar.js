@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useLocation} from "react-router-dom";
 
 export default function Navbar() {
+  let location=useLocation();
+  React.useEffect(() => {
+    console.log(location.pathname);
+  }, [location]);
   return (
-    <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
@@ -23,12 +26,12 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className={`nav-link ${location.pathname==='/'?'active':''}`} aria-current="page" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className={`nav-link ${location.pathname==='/about'?'active':''}`} to="/about">
                   About
                 </Link>
               </li>
@@ -47,6 +50,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+
   );
 }
