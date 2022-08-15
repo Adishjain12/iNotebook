@@ -1,9 +1,7 @@
-import React, {useContext} from "react";
-import noteContext from "../context/Notes/noteContext";
+import Notes from "./Notes";
+import React from "react";
 
-export default function Home() {
-  const context=useContext(noteContext);
-  const {notes,setNotes}=context;
+const Home = () => {
   return (
     <div>
       <div className="container">
@@ -13,54 +11,49 @@ export default function Home() {
 
         <div className="container my-3">
           <form>
-            <div class="form-group container my-3">
-              <label for="exampleInputEmail1 ">Email address</label>
+            <div className="form-group container my-3">
+              <label htmlFor="exampleInputEmail1 ">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
               />
-              <small id="emailHelp" class="form-text text-muted">
+              <small id="emailHelp" className="form-text text-muted">
                 We'll never share your email with anyone else.
               </small>
             </div>
-            <div class="form-group container my-3">
-              <label for="exampleInputPassword1">Password</label>
+            <div className="form-group container my-3">
+              <label htmlFor="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
               />
             </div>
-            <div class="form-check container my-3 mx-3">
+            <div className="form-check container my-3 mx-3">
               <input
                 type="checkbox"
-                class="form-check-input"
+                className="form-check-input"
                 id="exampleCheck1"
               />
-              <label class="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" htmlFor="exampleCheck1">
                 Check me out
               </label>
             </div>
             <div className="container my-3">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" className="btn btn-primary">
                 Submit
               </button>
             </div>
           </form>
         </div>
       </div>
-      <div className="container my-3">
-        <h2>Your Notes</h2>
-        
-          {notes.map((note)=>{
-            return note.title;
-          })}
-        
-      </div>
+      <Notes />
     </div>
   );
-}
+};
+
+export default Home;

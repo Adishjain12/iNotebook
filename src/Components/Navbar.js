@@ -1,7 +1,7 @@
 import React from "react";
 import { Link ,useLocation} from "react-router-dom";
 
-export default function Navbar() {
+const Navbar=()=> {
   let location=useLocation();
   React.useEffect(() => {
     console.log(location.pathname);
@@ -10,7 +10,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Navbar
+            iNotebook
           </Link>
           <button
             className="navbar-toggler"
@@ -53,3 +53,5 @@ export default function Navbar() {
 
   );
 }
+
+export default Navbar;
