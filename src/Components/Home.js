@@ -33,16 +33,7 @@ const Home = () => {
                 placeholder="Password"
               />
             </div>
-            <div className="form-check container my-3 mx-3">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check me out
-              </label>
-            </div>
+            
             <div className="container my-3">
               <button type="submit" className="btn btn-primary">
                 Submit
