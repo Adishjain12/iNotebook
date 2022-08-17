@@ -80,7 +80,7 @@ router.put("/updatenote/:id", fetchuser, async (req, res) => {
       { $set: newNote },
       { new: true }
     );
-    res.json({ note });
+    res.json({note});
   } catch (error) {
     console.log(error.message);
     res.status(500).send("Internal server error");
