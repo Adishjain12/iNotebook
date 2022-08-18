@@ -49,6 +49,18 @@ const AddNote = () => {
             />
           </div>
 
+          <div className="form-group container my-3">
+            <label htmlFor="description">Tag</label>
+            <input
+              type="text"
+              className="form-control"
+              id="tag"
+              name="tag"
+              placeholder="Enter Tag"
+              onChange={onChange}
+            />
+          </div>
+
           <div className="container my-3">
             <button
               type="submit"
