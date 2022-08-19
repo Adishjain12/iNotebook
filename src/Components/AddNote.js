@@ -8,11 +8,12 @@ const AddNote = () => {
   const [note, setnote] = useState({
     title: "",
     description: "",
-    tag: "default",
+    tag: "",
   });
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note.title, note.description, note.tag);
+    setnote({ title: "", description: "", tag: "" });
   };
   const onChange = (e) => {
     setnote({ ...note, [e.target.name]: e.target.value });
@@ -35,6 +36,7 @@ const AddNote = () => {
               aria-describedby="emailHelp"
               placeholder="Enter Title"
               onChange={onChange}
+              value={note.title}
             />
           </div>
           <div className="form-group container my-3">
@@ -46,6 +48,7 @@ const AddNote = () => {
               name="description"
               placeholder="Enter Description"
               onChange={onChange}
+              value={note.description}
             />
           </div>
 
@@ -58,11 +61,13 @@ const AddNote = () => {
               name="tag"
               placeholder="Enter Tag"
               onChange={onChange}
+              value={note.tag}
             />
           </div>
 
           <div className="container my-3">
             <button
+              disabled={note.title.length < 3 || note.description.length < 5}
               type="submit"
               className="btn btn-primary"
               onClick={handleClick}

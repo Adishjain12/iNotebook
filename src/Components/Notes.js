@@ -110,16 +110,6 @@ const Notes = () => {
                     value={note.etag}
                   />
                 </div>
-
-                <div className="container my-3">
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    onClick={handleClick}
-                  >
-                    Add Note
-                  </button>
-                </div>
               </form>
             </div>
             <div className="modal-footer">
@@ -132,6 +122,9 @@ const Notes = () => {
                 Close
               </button>
               <button
+                disabled={
+                  note.etitle.length < 3 || note.edescription.length < 5
+                }
                 type="button"
                 className="btn btn-primary"
                 onClick={handleClick}
@@ -144,6 +137,9 @@ const Notes = () => {
       </div>
       <div className="row my-3 mx-3">
         <h2>Your Notes</h2>
+        <div className="container">
+          {notes.length == 0 && "No notes to display"}
+        </div>
         {notes.map((note) => {
           return (
             <Noteitem key={note._id} updateNote={updateNote} note={note} />
