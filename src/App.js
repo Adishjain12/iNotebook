@@ -6,6 +6,8 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import NoteState from "./context/Notes/NoteState";
 import Alert from "./Components/Alert";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 
 function App() {
   return (
@@ -13,11 +15,13 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <Alert messag e="Helo" />
+          <Alert message="Helo" />
           <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />}></Route>
               <Route exact path="/about" element={<About />}></Route>
+              <Route exact path="/login" element={<Login/>}></Route>
+              <Route exact path="/signup" element={<Signup/>}></Route>
             </Routes>
           </div>
         </Router>
