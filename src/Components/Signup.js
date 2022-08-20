@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (props) => {
   const [crediantials, setcrediantials] = useState({
     name: "",
     email: "",
@@ -13,7 +13,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (crediantials.password !== crediantials.cpassword) {
-      alert("Password does not match");
+      props.showAlert("Check the password","danger");
     } else {
       const response = await fetch(
         "http://localhost:5000/api/auth/createuser",
@@ -34,10 +34,11 @@ const Signup = () => {
 
       if (json.success) {
         //Save the auth token and  redirect
+        props.showAlert("Account created successfully","success");
         localStorage.setItem("token", json.authtoken);
         navigate("/");
       } else {
-        alert("Invalid crediantials");
+        props.showAlert("Invalid crediantials","danger");
       }
     }
   };
