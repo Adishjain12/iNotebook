@@ -1,16 +1,21 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   let location = useLocation();
   //React.useEffect(() => {
-    //console.log(location.pathname);
+  //console.log(location.pathname);
   //}, [location]);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("auth-token");
+    navigate("/login");
+  };
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          iNotebook
+        <Link className="navbar-brand" to="/" style={{ color: "white" }}>
+          Notify
         </Link>
         <button
           className="navbar-toggler"
@@ -27,6 +32,7 @@ const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link
+                style={{ color: "white" }}
                 className={`nav-link ${
                   location.pathname === "/" ? "active" : ""
                 }`}
@@ -38,6 +44,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
+                style={{ color: "white" }}
                 className={`nav-link ${
                   location.pathname === "/about" ? "active" : ""
                 }`}
@@ -47,10 +54,28 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
-          <Link to="/login" className="btn btn-primary btn-lg active mx-2" role="button" >Login</Link>
-          <Link to="/signup" className="btn btn-primary btn-lg active" role="button">Sign up</Link>
-          </form>
+          {!localStorage.getItem("auth-token") ? (
+            <form className="d-flex">
+              <Link
+                to="/login"
+                className="btn btn-primary btn-lg active mx-2"
+                role="button"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="btn btn-primary btn-lg active"
+                role="button"
+              >
+                Sign up
+              </Link>
+            </form>
+          ) : (
+            <button onClick={handleLogout} className="btn btn-primary">
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </nav>

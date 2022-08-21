@@ -20,7 +20,10 @@ const AddNote = (props) => {
     setnote({ ...note, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{ border: "4px solid black", borderRadius: "10px" }}
+    >
       <div className="container mx-3">
         <h1>Add Note</h1>
       </div>
