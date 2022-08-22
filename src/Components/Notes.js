@@ -46,6 +46,7 @@ const Notes = (props) => {
 
   return (
     <>
+    <div>
       <AddNote showAlert={props.showAlert} />
       <button
         type="button"
@@ -156,7 +157,7 @@ const Notes = (props) => {
             />
           );
         })}
-      </div>
+      </div></div>
     </>
   );
 };

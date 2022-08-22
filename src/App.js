@@ -3,12 +3,13 @@ import Navbar from "./Components/Navbar";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
-import About from "./Components/About";
 import NoteState from "./context/Notes/NoteState";
 import Alert from "./Components/Alert";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import { useState } from "react";
+import About from "./Components/About";
+
 
 function App() {
   const [alert, setAlert] = useState(null);
