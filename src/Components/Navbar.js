@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Navbar = () => {
   let location = useLocation();
   //React.useEffect(() => {
-  //console.log(location.pathname);
+    //console.log(location.pathname);
   //}, [location]);
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -12,9 +12,9 @@ const Navbar = () => {
     navigate("/login");
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-dark">
+    <nav className="navbar navbar-expand-lg bg-black">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/" style={{ color: "white" }}>
+        <Link style={{ color: "white" }} className="navbar-brand" to="/">
           Notify
         </Link>
         <button
@@ -31,8 +31,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
-                style={{ color: "white" }}
+              <Link style={{ color: "white" }}
                 className={`nav-link ${
                   location.pathname === "/" ? "active" : ""
                 }`}
@@ -43,8 +42,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                style={{ color: "white" }}
+              <Link style={{ color: "white" }}
                 className={`nav-link ${
                   location.pathname === "/about" ? "active" : ""
                 }`}

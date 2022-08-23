@@ -156,6 +156,7 @@ const Signup = (props) => {
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg"
+
                           >
                             Register
                           </button>

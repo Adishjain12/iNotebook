@@ -13,7 +13,8 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
+        "auth-token":
+          localStorage.getItem('auth-token'),
       },
     });
     const json = await response.json();
@@ -27,7 +28,8 @@ const NoteState = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
+        "auth-token":
+          localStorage.getItem('auth-token'),
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -42,7 +44,8 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
+        "auth-token":
+          localStorage.getItem('auth-token'),
       },
     });
     const json = await response.json();
@@ -61,7 +64,8 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
+        "auth-token":
+          localStorage.getItem('auth-token'),
       },
       body: JSON.stringify({ title, description, tag }),
     });

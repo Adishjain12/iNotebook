@@ -33,7 +33,7 @@ const Login = (props) => {
   return (
     <div>
       <section className="vh-80">
-        <div className="container-fluid h-custom">
+      <div className="container-fluid h-custom">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-md-9 col-lg-6 col-xl-5">
               <img
@@ -75,6 +75,7 @@ const Login = (props) => {
                   />
                 </div>
 
+
                 <div className="text-center text-lg-start mt-4 pt-2 container">
                   <button
                     type="submit"
@@ -85,12 +86,12 @@ const Login = (props) => {
                   </button>
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-      </section>
+            </div> 
     </div>
-  );
-};
+  </div>
+</section>
+    </div>
+  )
+}
 
-export default Login;
+export default Login
